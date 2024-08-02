@@ -1,4 +1,5 @@
 # 勤怠管理WEBアプリ設計書
+http://157.7.205.18/attendance.html
 
 ## 1. 概要
 ### 1.1. プロジェクト名
@@ -57,21 +58,28 @@
 
 ## 4. データベース設計
 ### 4.1. ER図
-（ER図をここに配置）
+![alt text](image.png)
 
 ### 4.2. テーブル定義
-#### Employeesテーブル
-- `id`: INT, 主キー
-- `name`: VARCHAR
-- `email`: VARCHAR
-- `password`: VARCHAR
-- `role`: ENUM('employee', 'admin')
 
-#### Attendanceテーブル
-- `id`: INT, 主キー
-- `employee_id`: INT, 外部キー (Employees.id)
-- `clock_in`: DATETIME
-- `clock_out`: DATETIME
+## Employees テーブル
+
+| 列名     | データ型   | 説明                                           |
+|----------|------------|------------------------------------------------|
+| id       | INT        | 主キー (プライマリキー)                        |
+| name     | VARCHAR    | 社員の名前                                    |
+| email    | VARCHAR    | 社員のメールアドレス                          |
+| password | VARCHAR    | 社員のパスワード（暗号化された形式で保存）     |
+| role     | ENUM       | 社員の役割（一般社員または管理者）              |
+
+## Attendance テーブル
+
+| 列名         | データ型   | 説明                        |
+|--------------|------------|-----------------------------|
+| id           | INT        | 主キー (プライマリキー)     |
+| employee_id  | INT        | 外部キー (Employees.id)    |
+| clock_in     | DATETIME   | 出勤時刻                    |
+| clock_out    | DATETIME   | 退勤時刻                    |
 
 ## 5. API設計
 ### 5.1. エンドポイント定義
