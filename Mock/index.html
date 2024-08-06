@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>勤怠管理WEBアプリ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>勤怠管理WEBアプリ</h1>
+            <nav>
+                <a href="#login">ログイン</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="login">
+            <div class="container">
+                <h2>ログイン</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="email">メールアドレス:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">パスワード:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit">ログイン</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 勤怠管理WEBアプリ</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
